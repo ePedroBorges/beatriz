@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Para Beatriz — Eu te amo</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="description" content="Uma mensagem especial para a Beatriz">
+</head>
+<body>
+    <main class="card" role="main">
+        <h1>Beatriz</h1>
+        <p class="message">Beatriz, eu te amo. Para sempre ♥</p>
+        <button class="reveal" aria-expanded="false">Mostrar surpresa</button>
+        <div class="surprise" aria-hidden="true">
+            <p>Você é a razão do meu sorriso. Obrigado por cada momento ao seu lado.</p>
+        </div>
+    </main>
+
+    <script>
+        const btn = document.querySelector('.reveal');
+        const surprise = document.querySelector('.surprise');
+        btn.addEventListener('click', () => {
+            const shown = surprise.classList.toggle('show');
+            surprise.setAttribute('aria-hidden', !shown);
+            btn.setAttribute('aria-expanded', shown);
+            btn.textContent = shown ? 'Esconder' : 'Mostrar surpresa';
+        });
+    </script>
+</body>
+</html>

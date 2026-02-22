@@ -1,0 +1,78 @@
+*{
+  box-sizing: border-box;
+}
+html,body{
+  height:100%;
+}
+body{
+  margin:0;
+  display:grid;
+  place-items:center;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffeef8 50%, #ffd1e8 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
+  padding:2.5rem;
+  border-radius:20px;
+  text-align:center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width:560px;
+  width:90%;
+}
+h1{
+  margin:0 0 0.25rem 0;
+  font-size:3rem;
+  color:#ff2d95;
+  letter-spacing:1px;
+  display:inline-flex;
+  align-items:center;
+}
+h1::after{
+  content:'♥';
+  margin-left:0.6rem;
+  color:#ff2d95;
+  transform-origin:center;
+  animation:pulse 1s infinite;
+}
+.message{
+  font-size:1.1rem;
+  color:#ff2d95;
+  margin:0.5rem 0 1rem 0;
+}
+.reveal{
+  background:#ff2d95;
+  color:#fff;
+  border:none;
+  padding:0.7rem 1.1rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow: 0 8px 20px rgba(255,45,149,0.18);
+}
+.reveal:focus{outline:3px solid rgba(255,45,149,0.18)}
+.surprise{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.6s cubic-bezier(.2,.9,.3,1), opacity 0.4s ease;
+  opacity:0;
+}
+.surprise.show{
+  max-height:200px;
+  opacity:1;
+  margin-top:1rem;
+}
+.surprise p{margin:0;color:#ff2d95;font-weight:600}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.18)}
+  100%{transform:scale(1)}
+}
+
+@media (min-width:900px){
+  .card{padding:3.5rem}
+  h1{font-size:4rem}
+}
